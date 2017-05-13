@@ -10,6 +10,7 @@ var monk = require('monk');
 var db = monk('localhost:27017/nodetest1');
 
 var index = require('./routes/index');
+var dijkstra = require('./routes/dijkstra');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
@@ -52,6 +53,7 @@ app.use('/work',work);
 app.use('/newContact',newContact);
 app.use('/newAbout',newAbout);
 app.use('/table',table);
+app.use('/dijkstra', dijkstra);
 
 
 // catch 404 and forward to error handler
